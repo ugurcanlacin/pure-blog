@@ -11,7 +11,11 @@ import pureblog.repository.UserRepository;
 @SpringBootApplication
 public class PureblogApplication {
 	
+	@Autowired
+	UserRepository repository;
+	 
     public static void main(String[] args) {
         SpringApplication.run(PureblogApplication.class, args);
     }
+
 }

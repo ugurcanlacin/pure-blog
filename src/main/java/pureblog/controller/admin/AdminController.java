@@ -6,8 +6,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AdminController {
-	@RequestMapping("/")
+	@RequestMapping("/login")
 	public ModelAndView getLoginPage(){
 		return new ModelAndView("login");
+	}
+	@RequestMapping("/admin/dashboard")
+	public ModelAndView getDashboardPage(){
+		return new ModelAndView("admin/dashboard");
 	}
 }

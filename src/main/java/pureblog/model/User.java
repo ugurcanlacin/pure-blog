@@ -1,6 +1,12 @@
 package pureblog.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.GrantedAuthorityImpl;
 
 public class User {
 
@@ -8,9 +14,9 @@ public class User {
 	private String id;
 	private String username;
 	private String password;
-	private String role;
+	private List<String> role;
 	
-	public User(String username, String password,String role) {
+	public User(String username, String password,List<String> role) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -34,11 +40,14 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getRole() {
-		return role;
+	public Collection<? extends GrantedAuthority> getRole() {
+		Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+		for (String r : role) {
+			authorities.add(new GrantedAuthorityImpl(r));
+		}
+		return authorities;
 	}
-	public void setRole(String role) {
+	public void setRole(List<String> role) {
 		this.role = role;
 	}
-	
 }
