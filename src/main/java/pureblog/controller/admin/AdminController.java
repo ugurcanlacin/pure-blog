@@ -25,7 +25,7 @@ public class AdminController {
 		    	break;
 		}
 		if(hasRole)
-			return new ModelAndView("admin/dashboard");
+			return new ModelAndView("redirect:dashboard");
 		else
 			return new ModelAndView("login");
 	}
