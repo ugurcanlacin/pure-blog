@@ -15,7 +15,7 @@
 	<h1>Hello</h1>
 
 	<h2>Admin Dashboard Page!</h2>
-	<form th:action="@{/login}" method="post">
+	<form th:action="@{/logout}" method="post">
 		<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
 		<button type="submit">Log out</button>
