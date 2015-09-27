@@ -14,9 +14,9 @@ public class User {
 	private String id;
 	private String username;
 	private String password;
-	private List<String> role;
+	private String role;
 	
-	public User(String username, String password,List<String> role) {
+	public User(String username, String password,String role) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -40,14 +40,11 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Collection<? extends GrantedAuthority> getRole() {
-		Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		for (String r : role) {
-			authorities.add(new GrantedAuthorityImpl(r));
-		}
-		return authorities;
+	public String getRole() {
+		return role;
 	}
-	public void setRole(List<String> role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
+
 }

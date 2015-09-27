@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+<title>Spring Security Example</title>
+
+<link
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+	rel="stylesheet" media="screen" />
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"></script>
+<!-- 
+<link href="../../static/css/pureblog.css"
+	th:href="@{/css/pureblog.css}" rel="stylesheet" media="screen" />
+	 -->
+</head>
+
+<body>
+
+	<div id="fullscreen_bg" class="fullscreen_bg" />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-4 col-md-offset-4">
+				<div class="account-wall">
+					<h1 class="text-center login-title">Sign in</h1>
+					<form th:action="@{/login}" class="form-signin" method="post">
+						<input type="hidden" name="${_csrf.parameterName}"
+							value="${_csrf.token}" /> <input type="text" name="username"
+							class="form-control" placeholder="Username"
+							th:required="required" /> <input type="password" name="password"
+							class="form-control" placeholder="Password"
+							th:required="required" />
+						<div>
+							<label for="remember-me">Remember me</label> <input
+								type="checkbox" name="remember-me" id="remember-me" />
+						</div>
+						<button class="btn btn-lg btn-primary btn-block" type="submit">
+							Sign in</button>
+						<div th:if="${param.error}" class="error">Invalid username
+							and password.</div>
+						<div th:if="${param.logout}" class="logout">You have been
+							logged out.</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--
+
+
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+
+<form th:action="@{/login}" method="post">
+    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+
+-->
+</body>
+</html>
