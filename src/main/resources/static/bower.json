@@ -1,0 +1,21 @@
+
+{
+  "name": "pure-blog",
+  "version": "0.1 beta",
+  "homepage": "https://github.com/ugurcanlacin/pure-blog",
+  "authors": [
+    "Uğurcan Laçin <lacinugur@hotmail.com.tr>"
+  ],
+  "dependencies": {
+    "admin-lte": "2.3.0"
+  },
+  "description": "Pure Blog is simple blog project which is based on Spring framework.",
+  "license": "GPLv2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
