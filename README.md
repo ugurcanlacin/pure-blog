@@ -1,4 +1,4 @@
-# Pure Blog
+Pure Blog
 ======
 It is simple blog project which is based on Spring framework.
 
