@@ -4,24 +4,117 @@
 
 <title>Spring Framework Guru</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></link>
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"></link>
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+		 folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet"
+	href="../../static/bower_components/admin-lte/dist/css/skins/_all-skins.min.css"
+	th:href="@{/bower_components/admin-lte/dist/css/skins/_all-skins.min.css}"></link>
 <link
 	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
 	th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
-	rel="stylesheet" media="screen" />
+	rel="stylesheet" media="screen" ></link>
 <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
 	th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
-	<link href="../../static/css/pureblog.css"
-		th:href="@{/css/pureblog.css}" rel="stylesheet" media="screen" />
-		
+<link href="../../static/css/pureblog.css"
+	th:href="@{/css/pureblog.css}" rel="stylesheet" media="screen"></link>
+<link media="screen" rel="stylesheet"
+	href="../../static/bower_components/admin-lte/dist/css/AdminLTE.min.css"
+	th:href="@{/bower_components/admin-lte/dist/css/AdminLTE.min.css}"></link>
 </head>
-<body>
-	<h1>Hello</h1>
+<body class="hold-transition skin-blue layout-top-nav">
 
-	<h2>Admin Dashboard Page!</h2>
-	<form th:action="@{/logout}" method="post">
-		<input type="hidden" name="${_csrf.parameterName}"
-			value="${_csrf.token}" />
-		<button type="submit">Log out</button>
-	</form>
+	<div class="wrapper">
+
+		<header class="main-header">
+			<nav class="navbar navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<a href="../../index2.html" class="navbar-brand"><b>Pure</b>Blog</a>
+						<button type="button" class="navbar-toggle collapsed"
+							data-toggle="collapse" data-target="#navbar-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse pull-left"
+						id="navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">Articles <span
+									class="sr-only">(current)</span></a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+					<!-- Navbar Right Menu -->
+					<div class="navbar-custom-menu">
+						<ul class="nav navbar-nav">
+							<li>
+								<form th:action="@{/logout}" method="post">
+									<input type="hidden" name="${_csrf.parameterName}"
+										value="${_csrf.token}"/>
+									<button class="btn btn-info logout" type="submit">Log
+										out</button>
+								</form>
+							</li>
+						</ul>
+g
+					</div>
+				</div>
+				<!-- /.container-fluid -->
+			</nav>
+		</header>
+		<!-- Full Width Column -->
+		<div class="content-wrapper">
+			<div class="container">
+				<!-- Content Header (Page header) -->
+				<section class="content-header">
+					<h1>Articles</h1>
+				</section>
+
+				<!-- Main content -->
+				<section class="content"></section>
+				<!-- /.content -->
+			</div>
+			<!-- /.container -->
+		</div>
+		<!-- /.content-wrapper -->
+		<footer class="main-footer">
+			<div class="container">
+				<div class="pull-right hidden-xs">
+					<b>Version</b> 0.1 Beta
+				</div>
+				<strong>Copyright &copy; 2015 Pure Blog.</strong> All rights
+				reserved.
+			</div>
+			<!-- /.container -->
+		</footer>
+	</div>
+	<!-- ./wrapper -->
+
+	<!-- Bootstrap 3.3.5 -->
+	<script
+		src="../../static/bower_components/admin-lte/bootstrap/js/bootstrap.min.js"
+		th:src="@{/bower_components/admin-lte/bootstrap/js/bootstrap.min.js}" ></script>
+	<!-- SlimScroll -->
+	<script
+		src="../../static/bower_components/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"
+		th:src="@{/bower_components/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js}"></script>
+	<!-- FastClick -->
+	<script
+		src="../../static/bower_components/admin-lte/plugins/fastclick/fastclick.min.js"
+		th:src="@{/bower_components/admin-lte/plugins/fastclick/fastclick.min.js}"></script>
+	<!-- AdminLTE App -->
+	<script
+		src="../../static/bower_components/admin-lte/dist/js/app.min.js"
+		th:src="@{/bower_components/admin-lte/dist/js/app.min.js}"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="../../static/bower_components/admin-lte/dist/js/demo.js"
+	th:src="@{/bower_components/admin-lte/dist/js/demo.js}"></script>
 </body>
 </html>
